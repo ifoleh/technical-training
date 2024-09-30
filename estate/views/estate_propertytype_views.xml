@@ -1,5 +1,5 @@
 <odoo>
-    <record id="estate_property_view_tree" model="ir.ui.view">
+    <record id="estate_propertytype_view_tree" model="ir.ui.view">
         <field name="name">estate.propertytype.tree</field>
         <field name="model">estate.propertytype</field>
         <field name="arch" type="xml">
@@ -10,7 +10,7 @@
         </field>
     </record>
 
-    <record id="estate_property_view_form" model="ir.ui.view">
+    <record id="estate_propertytype_view_form" model="ir.ui.view">
         <field name="name">estate.propertytype.form</field>
         <field name="model">estate.propertytype</field>
         <field name="arch" type="xml">
