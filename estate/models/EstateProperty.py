@@ -9,7 +9,7 @@ class EstateProperty(models.Model):
     postcode = fields.Char(string="PLZ")
     date_availability = fields.Date(string='Verfügbar ab', default=fields.Date.add(fields.Date.today(), months=3))
     expected_price = fields.Float(string='Erwarteter Verkaufspreis')
-    bedrooms = fields.Integer(string="Anzahl Schlafzimmer")
+    bedrooms = fields.Integer(string="Anzahl Zimmer")
     garden = fields.Boolean(string="Garten vorhanden")
     garden_orientation = fields.Selection([("N","Nord"),("O","Ost"),("S","Süd"),("W","West")], string="Garten Ausrichtung")
     activeForSale = fields.Boolean(default=False, string="Aktiviert für Verkauf")
