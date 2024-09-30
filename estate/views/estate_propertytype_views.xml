@@ -38,7 +38,7 @@
     </record>
 
     <menuitem id="estate_property_menu_2" name="Menu Two" parent="estate_property_root">
-        <menuitem id="estate_property_type_menu_action" action="estate_property_type_action"/>
+        <menuitem id="estate_property_type_menu_action1" action="estate_property_type_action"/>
     </menuitem>
     
 </odoo>
