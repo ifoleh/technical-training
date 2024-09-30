@@ -17,3 +17,4 @@ class EstateProperty(models.Model):
     type = fields.Many2one("estate.property.type", string="Typ")
     salesman = fields.Many2one("res.users", "Salesmanager")
     customer = fields.Many2one("res.partner", "Customer")
+    tags = fields.Many2many("estate.property.tags", string="Stichwörter")

@@ -47,6 +47,7 @@
                             <group>
                                 <group>
                                     <field name="description"/>
+                                    <field name="tags"/>
                                     <field name="bedrooms"/>
                                     <field name="garden"/>
                                     <field name="garden_orientation"/>
