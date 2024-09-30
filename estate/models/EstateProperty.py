@@ -12,5 +12,5 @@ class EstateProperty(models.Model):
     bedrooms = fields.Integer(string="Anzahl Schlafzimmer")
     garden = fields.Boolean(string="Garten vorhanden")
     garden_orientation = fields.Selection([("N","Nord"),("O","Ost"),("S","Süd"),("W","West")], string="Garten Ausrichtung")
-    active = fields.Boolean(default=False, string="Aktiv")
+    activeForSale = fields.Boolean(default=False, string="Aktiviert für Verkauf")
     state = fields.Selection(selection=[("new","Neu"),("offer_received","Angebot erhalten"),("offer_accepted","Angebot angenommen"),("sold","Verkauft"),("cancelled","Storniert")], default="new", copy=False, required=True)

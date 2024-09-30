@@ -9,6 +9,7 @@
                 <field name="bedrooms" />
                 <field name="description" />
                 <field name="expected_price" />
+                <field name="activeForSale"/>
             </tree>
         </field>
     </record>
@@ -44,6 +45,7 @@
                                     <field name="bedrooms"/>
                                     <field name="garden"/>
                                     <field name="garden_orientation"/>
+                                    <field name="activeForSale" />
                                 </group>
                             </group>
                         </page>
