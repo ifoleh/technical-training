@@ -15,3 +15,5 @@ class EstateProperty(models.Model):
     activeForSale = fields.Boolean(default=False, string="Aktiviert für Verkauf")
     state = fields.Selection(selection=[("new","Neu"),("offer_received","Angebot erhalten"),("offer_accepted","Angebot angenommen"),("sold","Verkauft"),("cancelled","Storniert")], default="new", copy=False, required=True)
     type = fields.Many2one("estate.property.type", string="Typ")
+    salesman = fields.Many2one("res.users", "Salesmanager")
+    customer = fields.Many2one("res.partner", "Customer")

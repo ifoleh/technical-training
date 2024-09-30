@@ -37,6 +37,10 @@
                             <field name="garden" />                            
                             <field name="garden_orientation" />                            
                         </group>
+                        <group>
+                            <field name="salesman" />
+                            <field name="customer" />
+                        </group>
                     </group>
                     <notebook>
                         <page string="Description">
