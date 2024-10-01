@@ -11,11 +11,19 @@
                 <div>Hello, World!</div>
             </xpath>        
 
-            <!-- add the property view -->
+            <!-- add the property view with widget-->
             <xpath expr="//page[@name='preferences']" position="after">
-                <page string="Estate" name="estate">
+                <page string="Estate Widget" name="estate">
                     <group>
                         <field name="estate_property_ids" widget="many2many_tags"/>
+                    </group>
+                </page>
+            </xpath>
+            <!-- add the property view-->
+            <xpath expr="//page[@name='preferences']" position="after">
+                <page string="Estate No Widget" name="estateNW">
+                    <group>
+                        <field name="estate_property_ids"/>
                     </group>
                 </page>
             </xpath>
