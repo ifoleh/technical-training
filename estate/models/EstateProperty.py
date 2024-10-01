@@ -54,3 +54,13 @@ class EstateProperty(models.Model):
         else:
             self.garden_orientation = False
             self.garden_area = 0
+
+    # logic for buttons
+    def action_set_to_available(self):
+        self.state = "new"
+        self.activeForSale = True
+
+    def action_set_to_sold(self):
+        self.state = "sold"
+        self.activeForSale = False
+   
