@@ -82,7 +82,7 @@
                                 <group>
                                     <field name="salesman_commission_ids">
                                         <tree string="Salesman Commissions">
-                                            <field name="saleman"/>
+                                            <field name="salesman"/>
                                             <field name="customer"/>
                                             <field name="commission"/>
                                         </tree>
