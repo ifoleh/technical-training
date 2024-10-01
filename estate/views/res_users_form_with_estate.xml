@@ -15,7 +15,7 @@
             <xpath expr="//page[@name='preferences']" position="after">
                 <page string="Estate" name="estate">
                     <group>
-                        <field name="estate_ids" widget="many2many_tags"/>
+                        <field name="estate_property_ids" widget="many2many_tags"/>
                     </group>
                 </page>
             </xpath>
