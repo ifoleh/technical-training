@@ -20,7 +20,7 @@ class EstatePropertyWithAccounting(models.Model):
 
     def action_set_to_sold(self):
         _logger.info("I am in the inherited method")
-        self.createCustomerInvoice(self)
+        self.createCustomerInvoice()
         return super().action_set_to_sold()
 
     def createCustomerInvoice(self):
