@@ -98,3 +98,10 @@ class EstateProperty(models.Model):
         ("name_unique", "UNIQUE(name)", "The name of the property must be unique"),
         ("price_positive", "CHECK(expected_price >= 0)", "The expected price must be positive")
     ]
+
+    # CRUD
+    @api.ondelete(at_uninstall=False)
+    def _unlink_new_cancelled(self):
+        for property in self:
+            if property.state not in ["new","cancelled"]:
+                raise UserError(_("You can only delete new or cancelled properties"))
