@@ -24,8 +24,10 @@ class EstateProperty(models.Model):
     garden_area = fields.Float(string="Gartenfläche M2")
     commission_for_sale = fields.Float(string="Provision für Verkauf")
     commission_for_marketing = fields.Float(string="Provision für Marketing")
-    property_offer_ids = fields.One2many("estate.property.offer", "property_id", string="Angebote")
     best_price = fields.Float(string="Bester Preis", compute="_compute_best_price", readonly=True)
+
+    # relational fields, these are not stored in the database
+    property_offer_ids = fields.One2many("estate.property.offer", "property_id", string="Angebote")
 
     # computed fields
     total_area = fields.Float(string="Gesamtfläche M2", readonly=True, compute="_compute_total_area")
@@ -75,7 +77,7 @@ class EstateProperty(models.Model):
             property.state = "sold"
             property.activeForSale = False
    
-    # constraints
+    # python constraints
     @api.constrains("garden_area")
     def _check_garden_area(self):
          for property in self:
@@ -87,3 +89,13 @@ class EstateProperty(models.Model):
         for property in self:
             if property.name and property.name[0].islower():
                 raise UserError(_("The name of the property must start with an uppercase letter"))
+            
+    # sql constraints
+    _sql_constraints = [
+        ("name_unique", "UNIQUE(name)", "The name of the property must be unique")
+    ]
+
+    _sql_constraints = [
+        ("price_positive", "CHECK(expected_price >= 0)", "The expected price must be positive")
+    ]
+    
