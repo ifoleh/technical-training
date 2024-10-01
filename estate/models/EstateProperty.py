@@ -48,7 +48,10 @@ class EstateProperty(models.Model):
 
     def _compute_best_price(self):
         for property in self:
-            property.best_price = max(property.property_offer_ids.mapped("price"))  # TODO put in list
+            if property.property_offer_ids:
+                property.best_price = max(property.property_offer_ids.mapped("price"))  # TODO put in list
+            else:
+                property.best_price = 0
 
     @api.onchange("garden")
     def _onchange_garden(self):
