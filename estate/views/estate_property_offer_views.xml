@@ -9,6 +9,8 @@
                 <field name="price" />
                 <field name="date" />
                 <field name="accepted" />
+                <button name="action_confirm_offer" type="object" string="Confirm" icon="fa-check"/>
+                <button name="action_refuse_offer" type="object" string="Cancel" icon="fa-ban"/>
             </tree>
         </field>
     </record>

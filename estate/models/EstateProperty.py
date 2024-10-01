@@ -1,4 +1,5 @@
-from odoo import api, fields, models
+from odoo import _, api, fields, models
+from odoo.exceptions import UserError
 
 class EstateProperty(models.Model):
     _name = "estate.property"
@@ -68,6 +69,9 @@ class EstateProperty(models.Model):
         self.activeForSale = True
 
     def action_set_to_sold(self):
-        self.state = "sold"
-        self.activeForSale = False
+        for property in self:
+            if property.state == "sold":
+                raise UserError(_("A sold property cannot be sold again"))
+            property.state = "sold"
+            property.activeForSale = False
    

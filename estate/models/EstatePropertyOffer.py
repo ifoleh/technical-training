@@ -15,3 +15,17 @@ class EstatePropertyOffer(models.Model):
   
     # logic for computed fields
  
+    # logic for buttons
+    def action_accept_offer(self):
+        for offer in self:
+            offer.property_id.state = "offer_accepted"
+            offer.accepted = True
+            for other_offer in offer.property_id.property_offer_ids:
+                if other_offer != offer:
+                    other_offer.accepted = False
+                    # other_offer.property_id.state = "offer_received"
+
+    def action_refuse_offer(self):
+        for offer in self:
+            offer.accepted = False
+            # offer.property_id.state = "new"
