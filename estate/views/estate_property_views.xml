@@ -84,7 +84,7 @@
                                         <tree string="Salesman Commissions">
                                             <field name="salesman"/>
                                             <field name="customer"/>
-                                            <field name="commission"/>
+                                            <field name="commission_amount"/>
                                         </tree>
                                     </field>
                                 </group>
