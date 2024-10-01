@@ -30,7 +30,7 @@ class EstatePropertyWithAccounting(models.Model):
         for property in self:
             invoice_vals = {
                 'move_type': 'out_invoice',
-                'partner_id': self.partner_invoice_id.id,
+                'partner_id': property.customer.id,
                 # 'journal_id': journal.id,  # company comes from the journal
                 'journal_id': 1,
                 'invoice_line_ids': [
