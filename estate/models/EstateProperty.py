@@ -24,6 +24,7 @@ class EstateProperty(models.Model):
     commission_for_sale = fields.Float(string="Provision für Verkauf")
     commission_for_marketing = fields.Float(string="Provision für Marketing")
     property_offer_ids = fields.One2many("estate.property.offer", "property_id", string="Angebote")
+    best_price = fields.Float(string="Bester Preis", compute="_compute_best_price", readonly=True)
 
     # computed fields
     total_area = fields.Float(string="Gesamtfläche M2", readonly=True, compute="_onchange_total_area")
@@ -41,3 +42,6 @@ class EstateProperty(models.Model):
     def _compute_commission_total_inverse(self):
         self.commission_for_sale = self.commission_total * 0.6
         self.commission_for_marketing = self.commission_total * 0.4
+
+    def _compute_best_price(self):
+        self.best_price = max(self.property_offer_ids.mapped("price"))
