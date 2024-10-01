@@ -74,20 +74,20 @@
                         </page>
                         <page string="Commissions">
                             <group>
-                                <group>
-                                    <field name="commission_for_sale"/>
-                                    <field name="commission_for_marketing"/>
-                                    <field name="commission_total"/>
-                                </group>
-                                <group>
-                                    <field name="salesman_commission_ids">
-                                        <tree string="Salesman Commissions">
-                                            <field name="salesman"/>
-                                            <field name="customer"/>
-                                            <field name="commission_amount"/>
-                                        </tree>
-                                    </field>
-                                </group>
+                                <field name="commission_for_sale"/>
+                                <field name="commission_for_marketing"/>
+                                <field name="commission_total"/>
+                            </group>
+                        </page>
+                        <page string="Salesman Commissions">
+                            <group>
+                                <field name="salesman_commission_ids">
+                                    <tree string="Salesman Commissions">
+                                        <field name="salesman"/>
+                                        <field name="customer"/>
+                                        <field name="commission_amount"/>
+                                    </tree>
+                                </field>
                             </group>
                         </page>
                         <page string="Offers">
