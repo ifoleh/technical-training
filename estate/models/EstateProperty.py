@@ -4,6 +4,7 @@ from odoo.exceptions import UserError
 class EstateProperty(models.Model):
     _name = "estate.property"
     _description = "This is a test model for Odoo Masterclass Dev Intro"
+    _order = "name asc"  # order by name ascending
     
     # non computed fields
     name = fields.Char(required = True, string='Name')

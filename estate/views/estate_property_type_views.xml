@@ -15,6 +15,13 @@
         <field name="model">estate.property.type</field>
         <field name="arch" type="xml">
             <form string="Property">
+                <button name="%(estate.estate_property_action)d"
+                        class="oe_stat_button"
+                        icon="fa-amazon"
+                        type="object">
+                    <field name="properties_count" widget="statinfo" string="Offers"/>
+                </button>
+
                 <sheet>
                     <div class="oe_title">
                         <h1 class="mb32">
