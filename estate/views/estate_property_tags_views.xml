@@ -37,10 +37,6 @@
         <field name="view_mode">list,form</field>
     </record>
 
-    <menuitem id="estate_property_root" name="Estate Property">
-        <menuitem id="estate_property_menu_2" name="Menu Two" />
-            <menuitem id="estate_property_tags_menu_action1" action="estate_property_tags_action"/>
-        </menuitem>
-    </menuitem>
+    <menuitem id="estate_property_tags_menu_action1" action="estate_property_tags_action" parent="estate_property_menu_2"/>
    
 </odoo>
