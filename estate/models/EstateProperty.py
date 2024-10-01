@@ -92,10 +92,6 @@ class EstateProperty(models.Model):
             
     # sql constraints
     _sql_constraints = [
-        ("name_unique", "UNIQUE(name)", "The name of the property must be unique")
-    ]
-
-    _sql_constraints = [
+        ("name_unique", "UNIQUE(name)", "The name of the property must be unique"),
         ("price_positive", "CHECK(expected_price >= 0)", "The expected price must be positive")
     ]
-    
