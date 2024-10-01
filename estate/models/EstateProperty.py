@@ -37,6 +37,7 @@ class EstateProperty(models.Model):
     def _onchange_commission_total(self):
         self.commission_total = self.commission_for_sale + self.commission_for_marketing
 
+    @api.depends("commission_total")
     def _onchange_commission_total_inverse(self):
         self.commission_for_sale = self.commission_total * 0.6
         self.commission_for_marketing = self.commission_total * 0.4
