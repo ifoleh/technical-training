@@ -27,24 +27,28 @@ class EstateProperty(models.Model):
     best_price = fields.Float(string="Bester Preis", compute="_compute_best_price", readonly=True)
 
     # computed fields
-    total_area = fields.Float(string="Gesamtfläche M2", readonly=True, compute="_onchange_total_area")
-    commission_total = fields.Float(string="Gesamtprovision", compute="_onchange_commission_total", inverse="_compute_commission_total_inverse")
+    total_area = fields.Float(string="Gesamtfläche M2", readonly=True, compute="_compute_total_area")
+    commission_total = fields.Float(string="Gesamtprovision", compute="_onchange_commission_total", inverse="_compute_commission_total")
 
     # logic for computed fields
     @api.onchange("living_area","garden_area")
-    def _onchange_total_area(self):  # private methods start with _
-        self.total_area = self.living_area + self.garden_area
+    def _compute_total_area(self):  # private methods start with _
+        for property in self:
+            property.total_area = property.living_area + property.garden_area
 
     @api.depends("commission_for_sale","commission_for_marketing")
-    def _onchange_commission_total(self):
-        self.commission_total = self.commission_for_sale + self.commission_for_marketing
+    def _compute_commission_total(self):
+        for property in self:
+            property.commission_total = property.commission_for_sale + property.commission_for_marketing
 
     def _compute_commission_total_inverse(self):
-        self.commission_for_sale = self.commission_total * 0.6
-        self.commission_for_marketing = self.commission_total * 0.4
+        for property in self:
+            property.commission_for_sale = property.commission_total * 0.6
+            property.commission_for_marketing = property.commission_total * 0.4
 
     def _compute_best_price(self):
-        self.best_price = max(self.property_offer_ids.mapped("price"))  # TODO put in list
+        for property in self:
+            property.best_price = max(property.property_offer_ids.mapped("price"))  # TODO put in list
 
     @api.onchange("garden")
     def _onchange_garden(self):
