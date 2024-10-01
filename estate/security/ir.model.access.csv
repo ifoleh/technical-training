@@ -3,3 +3,4 @@ estate.access_estate_property,access_estate_property,estate.model_estate_propert
 estate.access_estate_property_type,access_estate_property_type,estate.model_estate_property_type,base.group_user,1,1,1,1
 estate.access_estate_property_tags,access_estate_property_tags,estate.model_estate_property_tags,base.group_user,1,1,1,1
 estate.access_estate_property_offer,access_estate_property_offer,estate.model_estate_property_offer,base.group_user,1,1,1,1
+estate.access_estate_salesman_commission,access_estate_salesman_commission,estate.model_estate_salesman_commission,base.group_user,1,1,1,1

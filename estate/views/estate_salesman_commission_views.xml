@@ -1,0 +1,20 @@
+<odoo>
+    <record id="estate_salesman_commission_view_tree" model="ir.ui.view">
+        <field name="name">estate.salesman.commission.tree</field>
+        <field name="model">estate.salesman.commission</field>
+        <field name="arch" type="xml">
+            <tree string="Properties">
+                <field name="salesman" />
+                <field name="customer" />
+                <field name="commission_amount" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="estate_salesman_commission_action" model="ir.actions.act_window">
+        <field name="name">Estate Salesman Commission Action</field>
+        <field name="res_model">estate.salesman.commission</field>
+        <field name="view_mode">list,form</field>
+    </record>
+    
+</odoo>
