@@ -42,4 +42,10 @@
         <field name="view_mode">list,form</field>
     </record>
     
+    <record id="action_show_offers" model="ir.actions.act_window">
+        <field name="name">Estate Properties Show Action</field>
+        <field name="res_model">estate.property</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
 </odoo>
