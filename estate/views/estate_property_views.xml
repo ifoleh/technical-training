@@ -39,21 +39,14 @@
                             <field name="type" />
                         </group>
                         <group>
-                            <field name="best_price" />
-                        </group>
-                        <group>
-                            <field name="expected_price" />
-                            <field name="garden" />                            
-                            <field name="garden_orientation" />                            
-                        </group>
-                        <group>
                             <field name="salesman" />
                             <field name="customer" />
                         </group>
                         <group>
-                            <field name="living_area" />
-                            <field name="garden_area" />
-                            <field name="total_area" />
+                            <field name="best_price" />
+                        </group>
+                        <group>
+                            <field name="expected_price" />
                         </group>
                     </group>
                     <notebook>
@@ -69,7 +62,7 @@
                                 </group>
                             </group>
                         </page>
-                        <page string="This is also a description">
+                        <page string="Area">
                             <group>
                                 <group>
                                     <field name="living_area"/>
@@ -78,7 +71,7 @@
                                 </group>
                             </group>
                         </page>
-                        <page string="Commissions aka Provisionen">
+                        <page string="Commissions">
                             <group>
                                 <group>
                                     <field name="commission_for_sale"/>
@@ -87,14 +80,14 @@
                                 </group>
                             </group>
                         </page>
-                        <page string="Estate Offers aka Angebote">
+                        <page string="Offers">
                             <group>
                                 <group>
                                     <field name="property_offer_ids"/>
                                 </group>
                             </group>
                         </page>
-                        <page string="Garden Settings">
+                        <page string="Garden">
                             <group>
                                 <group>
                                     <field name="garden"/>
