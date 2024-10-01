@@ -11,7 +11,6 @@
         <menuitem id="estate_property_menu_3" name="Menu Three">
             <menuitem id="estate_property_offer_menu_action1" action="estate_property_offer_action" />
             <menuitem id="estate_salesman_commission_menu_action1" action="estate_salesman_commission_action" />
-            estate_salesman_commission_action
         </menuitem>
     </menuitem>
 
