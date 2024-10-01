@@ -7,6 +7,7 @@ class EstatePropertyType(models.Model):
     name = fields.Char(required = True, string='Name')
     description = fields.Text(string='Beschreibung')
     properties_count = fields.Integer(string="Anzahl der Immobilien", compute="_compute_properties_count")
+    property_ids = fields.One2many("estate.property", "type", string="Immobilien")
 
     def _compute_properties_count(self):
         for property_type in self:
