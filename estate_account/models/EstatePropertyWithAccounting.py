@@ -1,5 +1,7 @@
 from odoo import _, models, fields
 from odoo.exceptions import UserError
+import logging
+_logger = logging.getLogger(__name__)
 
 class EstatePropertyWithAccounting(models.Model):
     _inherit = "estate.property"
@@ -16,5 +18,6 @@ class EstatePropertyWithAccounting(models.Model):
         pass
 
     def action_set_to_sold(self):
-        print("I am in the inherited method")
+        _logger.info("I am in the inherited method")
+        
         return super().action_set_to_sold()
