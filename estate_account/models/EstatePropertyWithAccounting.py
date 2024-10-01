@@ -1,4 +1,5 @@
-from odoo import models, fields
+from odoo import _, models, fields
+from odoo.exceptions import UserError
 
 class EstatePropertyWithAccounting(models.Model):
     _inherit = "estate.property"
@@ -13,3 +14,7 @@ class EstatePropertyWithAccounting(models.Model):
 
     def action_create_payment(self):
         pass
+
+    def action_set_to_sold(self):
+        print("I am in the inherited method")
+        return super(self).action_set_to_sold()
