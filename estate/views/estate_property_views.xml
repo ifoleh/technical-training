@@ -80,7 +80,13 @@
                                     <field name="commission_total"/>
                                 </group>
                                 <group>
-                                    <field name="salesman_commission_ids" />
+                                    <field name="salesman_commission_ids">
+                                        <tree string="Salesman Commissions">
+                                            <field name="saleman"/>
+                                            <field name="customer"/>
+                                            <field name="commission"/>
+                                        </tree>
+                                    </field>
                                 </group>
                             </group>
                         </page>
