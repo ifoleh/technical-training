@@ -28,7 +28,7 @@ class EstateProperty(models.Model):
 
     # computed fields
     total_area = fields.Float(string="Gesamtfläche M2", readonly=True, compute="_compute_total_area")
-    commission_total = fields.Float(string="Gesamtprovision", compute="_onchange_commission_total", inverse="_compute_commission_total")
+    commission_total = fields.Float(string="Gesamtprovision", compute="_compute_commission_total", inverse="_compute_commission_total_inverse")
 
     # logic for computed fields
     @api.onchange("living_area","garden_area")
