@@ -21,11 +21,22 @@ class EstateProperty(models.Model):
     tags = fields.Many2many("estate.property.tags", string="Stichwörter")
     living_area = fields.Float(string="Wohnfläche M2")
     garden_area = fields.Float(string="Gartenfläche M2")
+    commission_for_sale = fields.Float(string="Provision für Verkauf")
+    commission_for_marketing = fields.Float(string="Provision für Marketing")
 
     # computed fields
     total_area = fields.Float(string="Gesamtfläche M2", readonly=True, compute="_onchange_total_area")
+    commission_total = fields.Float(string="Gesamtprovision", compute="_onchange_commission_total", inverse="_onchange_commission_total_inverse")
 
     # logic for computed fields
     @api.onchange("living_area","garden_area")
     def _onchange_total_area(self):  # private methods start with _
         self.total_area = self.living_area + self.garden_area
+
+    @api.depends("commission_for_sale","commission_for_marketing")
+    def _onchange_commission_total(self):
+        self.commission_total = self.commission_for_sale + self.commission_for_marketing
+
+    def _onchange_commission_total_inverse(self):
+        self.commission_for_sale = self.commission_total * 0.6
+        self.commission_for_marketing = self.commission_total * 0.4

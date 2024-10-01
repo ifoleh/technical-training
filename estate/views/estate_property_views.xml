@@ -69,6 +69,15 @@
                                 </group>
                             </group>
                         </page>
+                        <page string="Commissions aka Provisionen">
+                            <group>
+                                <group>
+                                    <field name="commission_for_sale"/>
+                                    <field name="commission_for_marketing"/>
+                                    <field name="commission_total"/>
+                                </group>
+                            </group>
+                        </page>
                     </notebook>
                 </sheet>
             </form>
