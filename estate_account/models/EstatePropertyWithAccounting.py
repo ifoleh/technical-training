@@ -25,13 +25,14 @@ class EstatePropertyWithAccounting(models.Model):
 
     def createCustomerInvoice(self):
         vals_list = []
-        journal = self.env['account.move'].with_context(default_move_type='out_invoice')._get_default_journal()
+        # journal = self.env['account.move'].with_context(default_move_type='out_invoice')._get_default_journal()
 
         for property in self:
             invoice_vals = {
                 'move_type': 'out_invoice',
                 'partner_id': self.partner_invoice_id.id,
-                'journal_id': journal.id,  # company comes from the journal
+                # 'journal_id': journal.id,  # company comes from the journal
+                'journal_id': 1,
                 'invoice_line_ids': [
                     Command.create({
                         "name": property.name,
