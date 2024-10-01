@@ -78,6 +78,13 @@
                                 </group>
                             </group>
                         </page>
+                        <page string="Estate Offers aka Angebote">
+                            <group>
+                                <group>
+                                    <field name="property_offer_ids"/>
+                                </group>
+                            </group>
+                        </page>
                     </notebook>
                 </sheet>
             </form>
