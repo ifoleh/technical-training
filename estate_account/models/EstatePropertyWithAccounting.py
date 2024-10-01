@@ -17,4 +17,4 @@ class EstatePropertyWithAccounting(models.Model):
 
     def action_set_to_sold(self):
         print("I am in the inherited method")
-        return super(self).action_set_to_sold()
+        return super().action_set_to_sold()
