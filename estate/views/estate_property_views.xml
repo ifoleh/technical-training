@@ -89,6 +89,7 @@
                                     <field name="date"/>
                                     <field name="accepted"/>
                                 </tree>
+                            </field>
                         </page>
                         <page string="Garden">
                             <group>
