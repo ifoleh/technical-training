@@ -28,6 +28,9 @@ class EstateProperty(models.Model):
 
     # relational fields, these are not stored in the database
     property_offer_ids = fields.One2many("estate.property.offer", "property_id", string="Angebote")
+    salesman_commission_ids = fields.Many2one("estate.salesman.commission", 
+                                              string="Provisionen",
+                                              domain="[('salesman', '=', 'salesman'),('customer', '=', 'customer')]")
 
     # computed fields
     total_area = fields.Float(string="Gesamtfläche M2", readonly=True, compute="_compute_total_area")

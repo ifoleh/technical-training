@@ -79,6 +79,9 @@
                                     <field name="commission_for_marketing"/>
                                     <field name="commission_total"/>
                                 </group>
+                                <group>
+                                    <field name="salesman_commission_ids")
+                                </group>
                             </group>
                         </page>
                         <page string="Offers">
