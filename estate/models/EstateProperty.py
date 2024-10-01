@@ -44,7 +44,7 @@ class EstateProperty(models.Model):
         self.commission_for_marketing = self.commission_total * 0.4
 
     def _compute_best_price(self):
-        self.best_price = max(self.property_offer_ids.mapped("price"))
+        self.best_price = max(self.property_offer_ids.mapped("price"))  # TODO put in list
 
     @api.onchange("garden")
     def _onchange_garden(self):
