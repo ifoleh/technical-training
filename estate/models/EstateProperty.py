@@ -75,3 +75,15 @@ class EstateProperty(models.Model):
             property.state = "sold"
             property.activeForSale = False
    
+    # constraints
+    @api.constrains("garden_area")
+    def _check_garden_area(self):
+         for property in self:
+              if property.garden_area < 0:
+                raise UserError(_("The garden area cannot be less than zero M2"))
+    
+    @api.constrains("name")
+    def _check_name(self):
+        for property in self:
+            if property.name and property.name[0].islower():
+                raise UserError(_("The name of the property must start with an uppercase letter"))
