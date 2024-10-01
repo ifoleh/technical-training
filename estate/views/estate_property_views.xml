@@ -82,7 +82,7 @@
                             </group>
                         </page>
                         <page string="Offers">
-                            <field name="offer_ids">
+                            <field name="property_offer_ids">
                                 <tree string="Offers">
                                     <field name="name_of_buyer"/>
                                     <field name="price"/>
