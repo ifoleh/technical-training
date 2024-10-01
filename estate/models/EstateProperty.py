@@ -1,9 +1,10 @@
-from odoo import fields, models
+from odoo import api, fields, models
 
 class EstateProperty(models.Model):
     _name = "estate.property"
     _description = "This is a test model for Odoo Masterclass Dev Intro"
     
+    # non computed fields
     name = fields.Char(required = True, string='Name')
     description = fields.Text(string='Beschreibung', copy=False)  # copy: ob beim Kopieren dieser Wert kopiert wird
     postcode = fields.Char(string="PLZ")
@@ -20,4 +21,11 @@ class EstateProperty(models.Model):
     tags = fields.Many2many("estate.property.tags", string="Stichwörter")
     living_area = fields.Float(string="Wohnfläche M2")
     garden_area = fields.Float(string="Gartenfläche M2")
-    total_area = fields.Float(string="Gesamtfläche M2", readonly=True)
+
+    # computed fields
+    total_area = fields.Float(string="Gesamtfläche M2", readonly=True, compute="_compute_total_area")
+
+    # logic for computed fields
+    @api.onchange("living_area","garden_area")
+    def _onchange_total_area(self):
+        self.total_area = self.living_area + self.garden_area
