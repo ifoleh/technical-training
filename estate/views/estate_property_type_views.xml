@@ -36,9 +36,5 @@
         <field name="res_model">estate.property.type</field>
         <field name="view_mode">list,form</field>
     </record>
-
-    <menuitem id="estate_property_menu_2" name="Menu Two" parent="estate_property_root"/>
-        <menuitem id="estate_property_type_menu_action1" action="estate_property_type_action" />
-    </menuitem>
     
 </odoo>
