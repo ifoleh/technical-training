@@ -1,6 +1,6 @@
 {
     "name": "Estate",  # The name that will appear in the App list
-    "version": "17.0.10.1.47",  # Version
+    "version": "17.0.10.1.48",  # Version
     "application": True,  # This line says the module is an App, and not a module
     "depends": ["base"],  # dependencies
     "data": [
@@ -10,7 +10,8 @@
         "views/estate_property_tags_views.xml",
         "views/estate_property_offer_views.xml",
         "views/estate_salesman_commission_views.xml",
-        "views/estate_property_menu.xml"
+        "views/estate_property_menu.xml",
+        "views/res_users_form_with_estate.xml"
     ],
     "installable": True,
     'license': 'LGPL-3',
