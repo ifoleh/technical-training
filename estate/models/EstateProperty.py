@@ -23,9 +23,9 @@ class EstateProperty(models.Model):
     garden_area = fields.Float(string="Gartenfläche M2")
 
     # computed fields
-    total_area = fields.Float(string="Gesamtfläche M2", readonly=True, compute="_compute_total_area")
+    total_area = fields.Float(string="Gesamtfläche M2", readonly=True, compute="_onchange_total_area")
 
     # logic for computed fields
     @api.onchange("living_area","garden_area")
-    def _onchange_total_area(self):
+    def _onchange_total_area(self):  # private methods start with _
         self.total_area = self.living_area + self.garden_area
