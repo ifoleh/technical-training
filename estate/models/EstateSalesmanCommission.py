@@ -7,4 +7,4 @@ class EstateSalesmanCommission(models.Model):
     salesman = fields.Many2one("res.users", string="Salesmanager", required=True)
     customer = fields.Many2one("res.partner", string="Customer", required=True)
     commission_amount = fields.Float(string="Commission", required=True)
-    property_id = fields.One2many("estate.property", domain=[('salesman_id', '=', salesman),('customer", "=", customer)]')])
+    property_id = fields.One2many("estate.property", domain=[('salesman_id', '=', salesman),('customer", "=", customer)]')], inverse_name="salesman_commission_ids")
